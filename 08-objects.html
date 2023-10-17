@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Objects</title>
+    </head>
+    <body>
+        <script>
+            /*
+            const product = {
+                name : 'socks',
+                price : 100
+            };
+            console.log(product);
+            console.log(product.name);
+            product.name = 'clothes';
+            console.log(product);
+            */
+            /*
+            const product2 ={
+                name: 'shirts',
+                'delivery-time': '1 day',
+                rating: {
+                    stars: 4.5,
+                    count: 87
+                },
+                fun: function function1(){
+                    console.log('haha');
+                }
+            };
+            console.log(product2);
+            console.log(product2.rating.stars);
+            product2.fun();
+
+            console.log(JSON.stringify(product2));
+            const jsonString = JSON.stringify(product2);
+            console.log(JSON.parse(jsonString)); 
+            */
+
+            console.log('hello'.length);
+            console.log('hello'.toUpperCase());
+
+            const object4 = {
+                message : 'Good',
+                price : 179
+            };
+            //const message = object4.message;
+            const {message} = object4;
+            console.log(message);
+
+            const object5 ={
+                message
+            }
+            console.log(object5);
+
+        </script>
+    </body>
+</html>
+
