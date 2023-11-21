@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>DOM Projects</title>
+        <style>
+
+            body{
+                font-family: Arial;
+            }
+            .subscribe-button{
+                border: none;
+                background-color: black;
+                color: white;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                padding-left: 15px;
+                padding-right: 15px;
+                font-weight: bold;
+                border-radius: 50px;
+                cursor: pointer;
+                margin-bottom: 30px;
+            }
+            .is-subscribed{
+                background-color: rgb(240,240,240);
+                color: black;
+            }
+            .cost-input{
+                font-size: 15px;
+                /* padding-top: 10px;
+                padding-bottom: 10px;
+                padding-left: 10px;
+                padding-right: 10px; */
+                padding: 10px;
+            }
+
+
+        </style>
+    </head>
+
+
+    <body>
+        <p>YouTube Subscribe Button</p>
+        <button onclick="
+            subscribe();
+        " class="js-subscribe-button subscribe-button">Subscribe
+        </button>
+
+        <p>Amazon Shipping Calulator</p>
+        <input placeholder="Cost of order" class="js-cost-input cost-input"
+        onkeydown="
+            handleCostKeydown(event);
+        ">
+        <button onclick="
+            calculateTotal();
+        ">Calculate</button>
+        <p class="js-total-cost"></p>
+        
+
+        <script>
+            function handleCostKeydown(event){
+                if(event.key === 'Enter'){
+                calculateTotal();
+                }
+            }
+
+            function calculateTotal(){
+
+                const inputEle = document.querySelector('.js-cost-input');
+                let cost = Number(inputEle.value);
+                if(cost < 40){
+                    cost += 10;
+                }
+                document.querySelector('.js-total-cost')
+                    .innerHTML = `$${cost}`
+            }
+
+            function subscribe(){
+                const buttonEle =  document.querySelector('.js-subscribe-button');
+                if (buttonEle.innerHTML === 'Subscribe'){
+                    buttonEle.innerHTML = 'Subscribed';
+                    buttonEle.classList.add('is-subscribed');
+                }
+                else{
+                    buttonEle.innerHTML = 'Subscribe';
+                    buttonEle.classList.remove('is-subscribed');
+                }
+            }
+
+        </script>
+    </body>
+</html>
+
